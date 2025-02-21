@@ -20,3 +20,18 @@ Habit Tracker is a [Telex](https://telex.im) integration that sends periodic rem
    ```sh
    git clone https://github.com/telex_integrations/habit-tracker.git
    cd habit-tracker
+## Setup
+1. **Install the Integration**:
+   - In your Telex organization, navigate to **Integrations > Add New**.
+   - Provide the URL to the [integration JSON file](#integration-json-configuration).
+
+2. **Configure Settings**:
+   - `interval`: Set the schedule (e.g., `0 9 * * *` for daily 9 AM reminders).
+   - `habits`: List habits to track (e.g., `Exercise, Meditate, Read`).
+
+3. **Enable in Channel**:
+   - Add the integration to your desired Telex channel under **Channel Settings > Integrations**.
+
+## How It Works
+1. Telex calls the `tick_url` at the configured interval.
+2. The integration sends a formatted message to the channel via `return_url`:
