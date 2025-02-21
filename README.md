@@ -26,7 +26,7 @@ Habit Tracker is a [Telex](https://telex.im) integration that sends periodic rem
    - Provide the URL to the [integration JSON file](#integration-json-configuration).
 
 2. **Configure Settings**:
-   - `interval`: Set the schedule (e.g., `0 9 * * *` for daily 9 AM reminders).
+   - `interval`: Set the schedule (e.g., Daily for daily reminders).
    - `habits`: List habits to track (e.g., `Exercise, Meditate, Read`).
 
 3. **Enable in Channel**:
