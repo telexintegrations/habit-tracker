@@ -1,0 +1,54 @@
+https://ping.telex.im/v1/webhooks/01951a74-d144-781a-9c09-2368481d70a7
+
+curl -X POST "http://localhost:8000/tick" \
+-H "Content-Type: application/json" \
+-d '{
+  "channel_id": "01951a74-d144-781a-9c09-2368481d70a7",
+  "return_url": "https://ping.telex.im/v1/webhooks/01951a74-d144-781a-9c09-2368481d70a7",
+  "settings": [
+    {"label": "interval", "type": "text", "required": true, "default": "* * * * *"},
+    {"label": "habits", "type": "text", "required": true, "default": "Exercise,Read"}
+  ]
+}'
+
+
+
+----------------------
+{
+  "data": {
+    "date": {
+      "created_at": "2025-02-20",
+      "updated_at": "2025-02-20"
+    },
+    "descriptions": {
+      "app_name": "habit-tracker",
+      "app_description": "daily habit tracker",
+      "app_logo": "https://th.bing.com/th/id/OIP.MJ9gcBBotfkUoj5gX7IjyQAAAA?rs=1&pid=ImgDetMain",
+      "app_url": "https://live-lens.onrender.com",
+      "background_color": "#fff"
+    },
+    "is_active": true,
+    "integration_type": "interval",
+    "integration_category": "Monitoring & Logging",
+    "key_features": [
+      "stay fit",
+      "stay healthy"
+    ],
+    "author": "Matt_Dev",
+    "settings": [
+      {
+        "label": "interval",
+        "type": "dropdown",
+        "required": true,
+        "default": "Daily",
+        "options": [
+          "Daily",
+          "Weekly",
+          "Monthly"
+        ]
+      }
+    ],
+    "target_url": "https://ping.telex.im/v1/webhooks/01951a74-d144-781a-9c09-2368481d70a7",
+    "tick_url": "https://health-predictor.onrender.com"
+  }
+}
