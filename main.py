@@ -22,6 +22,7 @@ app.add_middleware(
 )
 
 TELEX_WEBHOOK_URL = os.getenv("TELEX_WEBHOOK_URL")
+TELEX_TICK_URL = os.getenv("TELEX_TICK_URL")
 
 # Integration JSON
 @app.get("/integration.json")
@@ -33,7 +34,7 @@ async def get_integration_json(request: Request):
                 "app_name": "habit-tracker",
                 "app_description": "daily habit tracker",
                 "app_logo": "https://th.bing.com/th/id/OIP.MJ9gcBBotfkUoj5gX7IjyQAAAA?rs=1&pid=ImgDetMain",
-                "app_url": "https://live-lens.onrender.com",
+                "app_url": TELEX_TICK_URL,
                 "background_color": "#fff"
             },
             "is_active": True,
@@ -49,7 +50,7 @@ async def get_integration_json(request: Request):
                 "options": ["Daily", "Weekly", "Monthly"]
             }],
             "target_url": TELEX_WEBHOOK_URL,
-            "tick_url": "https://health-predictor.onrender.com"
+            "tick_url": TELEX_TICK_URL 
         }
     }
 
