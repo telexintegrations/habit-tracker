@@ -75,6 +75,12 @@ async def send_reminder(payload: TickPayload):
     
     # message = "🔄 **Time to track your habits!**\n" + "\n".join([f"- {habit}" for habit in habits ])
     message = "🔄 **Time to track your habits!**\n" + "\n".join([f"- {name} at {time}" for name, time in zip(names, times)])
+#     message = "🔄 **Time to track your habits!**\n" + "\n".join([
+#     f"- {name} at {hour}:{minute} {'A.M.' if int(hour) < 12 else 'P.M.'}"
+#     for name, time in zip(names, times) 
+#     for hour, minute in [time.split(":")]
+# ])
+
     data = {
         "message": message,
         "username": "Habit Tracker",
