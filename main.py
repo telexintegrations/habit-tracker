@@ -50,7 +50,7 @@ async def get_integration_json(request: Request):
                 "options": ["Daily", "Weekly", "Monthly"]
             }],
             "target_url": TARGET_URL,
-            "tick_url": TELEX_TICK_URL 
+            "tick_url": TELEX_TICK_URL
         }
     }
 
@@ -108,7 +108,7 @@ async def send_notification(name, habit_time):
 
     async with httpx.AsyncClient() as client:
         await client.post(
-            TELEX_WEBHOOK_URL, json=data
+            TELEX_TICK_URL, json=data
         )
         
 
