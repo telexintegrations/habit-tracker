@@ -6,7 +6,7 @@ from models.habit_model import Setting, TickPayload
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv
-
+from datetime import datetime
 
 load_dotenv()
 
@@ -56,7 +56,7 @@ async def get_integration_json(request: Request):
 
 # Background Task for Sending Reminders
 async def send_reminder(payload: TickPayload):
-    url = "https://habit-api.vercel.app/"
+    url = "https://habit-api-q7hb.onrender.com/"
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
         habits = response.json()
@@ -67,6 +67,7 @@ async def send_reminder(payload: TickPayload):
     message = "🔄 **Time to track your habits!**\n" + "\n".join([
         f"- {name} at {time} A.M" for name, time in zip(names, times)
     ])
+ 
 
     data = {
         "message": message,
@@ -81,7 +82,7 @@ async def send_reminder(payload: TickPayload):
 
 # Checking Habit Notifications
 async def check_activity_notifications():
-    url = "https://habit-api.vercel.app/"
+    url = "https://habit-api-q7hb.onrender.com/"
     
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
