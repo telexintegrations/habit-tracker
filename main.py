@@ -44,11 +44,9 @@ async def get_integration_json(request: Request):
             "key_features": ["stay fit", "stay healthy"],
             "author": "Matt_Dev",
             "settings": [{
-                "label": "interval",
-                "type": "dropdown",
-                "required": True,
-                "default": "Daily",
-                "options": ["Daily", "Weekly", "Monthly"]
+             
+                {"label": "interval", "type": "text", "required": True, "default": "* * * * *"}
+              
             }],
             "target_url": TARGET_URL,
             "tick_url": "https://habit-tracker-3aip.onrender.com/tick"
