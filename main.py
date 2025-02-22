@@ -45,9 +45,10 @@ async def get_integration_json(request: Request):
             "author": "Matt_Dev",
             "settings": [{
              
-                {"label": "interval", "type": "text", "required": True, "default": "* * * * *"}
+               "label": "interval", "type": "text", "required": True, "default": "* * * * *"
+               }
               
-            }],
+            ],
             "target_url": TARGET_URL,
             "tick_url": "https://habit-tracker-3aip.onrender.com/tick"
         }
