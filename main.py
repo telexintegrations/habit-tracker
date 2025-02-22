@@ -21,6 +21,7 @@ app.add_middleware(
     allow_headers=["*"],  
 )
 
+TELEX_WEBHOOK_URL = os.getenv("TELEX_WEBHOOK_URL")
 TARGET_URL = os.getenv("TARGET_URL")
 TELEX_TICK_URL = os.getenv("TELEX_TICK_URL")
 
@@ -50,7 +51,7 @@ async def get_integration_json(request: Request):
                 "options": ["Daily", "Weekly", "Monthly"]
             }],
             "target_url": TARGET_URL,
-            "tick_url": TELEX_TICK_URL
+            "tick_url": "https://habit-tracker-3aip.onrender.com/tick"
         }
     }
 
@@ -108,7 +109,7 @@ async def send_notification(name, habit_time):
 
     async with httpx.AsyncClient() as client:
         await client.post(
-            TELEX_TICK_URL, json=data
+            TELEX_WEBHOOK_URL, json=data
         )
         
 
