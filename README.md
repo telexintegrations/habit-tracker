@@ -23,7 +23,7 @@ Habit Tracker is a [Telex](https://telex.im) integration that sends periodic rem
 ## Setup
 1. **Install the Integration**:
    - In your Telex organization, navigate to **Integrations > Add New**.
-   - Provide the URL to the [integration JSON file](#integration-json-configuration).
+   - Provide the URL to the [integration JSON file](https://habit-tracker-3aip.onrender.com/integration.json).
 
 2. **Configure Settings**:
    - `interval`: Set the schedule (e.g., Daily for daily reminders).
